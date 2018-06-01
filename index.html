@@ -11,9 +11,19 @@
     Chromium <script>document.write(process.versions.chrome)</script>,
     and Electron <script>document.write(process.versions.electron)</script>.
 
+    <button onclick=testQuit()>app.quit()</button>
+    <button onclick=testExit()>app.exit()</button>
     <script>
       // You can also require other files to run in this process
       require('./renderer.js')
+
+      function testQuit() {
+          require('electron').remote.app.quit();
+      }
+
+      function testExit() {
+          require('electron').remote.app.exit();
+      }
     </script>
   </body>
 </html>
